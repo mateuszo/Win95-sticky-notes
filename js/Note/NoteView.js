@@ -31,6 +31,7 @@ export class NoteView {
     registerEventListeners(){
         this.element.getElementsByTagName('textarea')[0].addEventListener('input', this.controller.handleContentChange.bind(this.controller));
         this.element.getElementsByClassName('panel-title')[0].addEventListener('input', this.controller.handleTitleChange.bind(this.controller));
+
         let heading = this.element.firstElementChild;
         heading.addEventListener('dragstart', this.controller.handleDragStart.bind(this.controller));
         heading.addEventListener('dragend', this.controller.handleDragEnd.bind(this.controller));
