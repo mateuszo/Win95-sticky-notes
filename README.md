@@ -1,6 +1,8 @@
 # Not-pad
 This is a funny little sticky notes app that I've created while learning VanillaJS. I was able to implement kind of MVC framework.
 
+Try it out here -> https://mateuszo.github.io/Win95-sticky-notes/
+
 ### Used Technologies
 * vanilla ES6
 * Bootstrap
