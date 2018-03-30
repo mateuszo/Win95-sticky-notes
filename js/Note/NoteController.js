@@ -13,13 +13,11 @@ export class NoteController{
 
     handleTitleChange(e){
         this.note.title = e.srcElement.innerText;
-        console.log(this.note);
         storage.save();
     }
 
     handleDragStart(e){
         this.note.position.setPosition(e.clientX, e.clientY);
-        console.log(this.note);
     }
 
     handleDragEnd(e){
@@ -36,8 +34,7 @@ export class NoteController{
 
     handleDestroy(e){
         e.srcElement.closest('.note').remove();
-        //TODO: removing from persistance
-        //TODO: delete view as well
+        //TODO: delete view as well?
         storage.remove(this.note);
         delete this.model;
         delete this;

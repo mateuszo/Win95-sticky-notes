@@ -27,7 +27,6 @@ class Storage {
                 this.notes.add(Note.createFromObject(note));
             }
         }
-        console.log(this.notes);
     }
 }
 
