@@ -8,6 +8,12 @@ export class Note {
         this._position = new Position();
     }
 
+    static createFromObject(obj){
+        let note = new Note();
+        Object.assign(note, obj);
+        return note;
+    }
+
     get id() {
         return this._id;
     }

@@ -1,3 +1,5 @@
+import {Note} from "../Note/Note.js";
+
 class Storage {
     constructor(){
         this.notes = new Set();
@@ -21,8 +23,11 @@ class Storage {
     load(){
         let notes = JSON.parse(localStorage.getItem('notes'));
         if(notes !== null){
-            this.notes = new Set(notes);
+            for(let note of notes){
+                this.notes.add(Note.createFromObject(note));
+            }
         }
+        console.log(this.notes);
     }
 }
 

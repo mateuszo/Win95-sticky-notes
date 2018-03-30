@@ -7,14 +7,14 @@ export class NoteController{
     }
 
     handleContentChange(e){
-        console.log(this);
         this.note.content = e.srcElement.value;
-        console.log(this.note);
+        storage.save();
     }
 
     handleTitleChange(e){
         this.note.title = e.srcElement.innerText;
         console.log(this.note);
+        storage.save();
     }
 
     handleDragStart(e){
@@ -31,6 +31,7 @@ export class NoteController{
         noteElement.style.left = X + 'px';
         noteElement.style.top = Y + 'px';
         this.note.position.setPosition(X, Y);
+        storage.save();
     }
 
     handleDestroy(e){
