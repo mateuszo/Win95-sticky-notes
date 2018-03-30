@@ -3,7 +3,6 @@ export class NewButtonView {
         this.controller = controller;
         this.element = this.createElement();
         this.registerEventListeners();
-
     }
 
     render() {
