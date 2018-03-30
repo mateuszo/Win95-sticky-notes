@@ -1,6 +1,9 @@
+import {storage} from "../Storage/Storage.js";
+
 export class NoteController{
     constructor(note){
         this.note = note;
+        storage.add(this.note);
     }
 
     handleContentChange(e){
@@ -34,6 +37,7 @@ export class NoteController{
         e.srcElement.closest('.note').remove();
         //TODO: removing from persistance
         //TODO: delete view as well
+        storage.remove(this.note);
         delete this.model;
         delete this;
     }
