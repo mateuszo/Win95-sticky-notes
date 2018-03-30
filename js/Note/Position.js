@@ -1,7 +1,7 @@
 export class Position {
     constructor(){
-        this._X = 0;
-        this._Y = 0;
+        this._X = 200;
+        this._Y = 200;
     }
 
     setPosition(X, Y){

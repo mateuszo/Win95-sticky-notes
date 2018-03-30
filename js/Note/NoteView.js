@@ -11,7 +11,7 @@ export class NoteView {
 
     render(){
         return `
-        <div class="note panel panel-default">
+        <div class="note panel panel-default" style="left: ${this.controller.note.position.X}px; top: ${this.controller.note.position.Y}px;">
             <div class="panel-heading" draggable="true">
                 <h3 class="panel-title" contenteditable="true">${this.controller.note.title}</h3>
                 <div class="pull-right close-button">
