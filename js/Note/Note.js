@@ -10,7 +10,10 @@ export class Note {
 
     static createFromObject(obj){
         let note = new Note();
+        let position = new Position();
         Object.assign(note, obj);
+        Object.assign(position, obj._position)
+        note.position = position;
         return note;
     }
 
