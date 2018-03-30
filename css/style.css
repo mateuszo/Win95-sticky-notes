@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(0,128,131);
+}
+
+div.note {
+    position: absolute;
+    top: 200px;
+    animation: fadein 1s;
+}
+
+
+@keyframes fadein {
+    from { transform: scale(0); }
+    to   { transform: scale(1); }
+}
+
+
+.note-content {
+    padding: 10px;
+}
+
+.panel-heading {
+    cursor: move;
+}
+
+.panel-title {
+    display: inline-block;
+    cursor: text;
+}
+
+.close-button {
+    display: inline-block;
+    margin-right: -10px;
+    margin-top: -3px;
+    color: black;
+}
+
+.close-button > button {
+    padding-top: 4px;
+    padding-bottom: 0px;
+}
+
+#note-template {
+    visibility: hidden;
+}

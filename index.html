@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme-win95.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+    <h1>Hello Notepad!</h1>
+    <div class="container">
+        <img id="notepad" src="img/64px-Icon-notepad.svg.png"> <- double click here to create a new note
+
+        <div id="note-template" class="note panel panel-default">
+            <div class="panel-heading" draggable="true">
+                <h3 class="panel-title" contenteditable="true">Notepad</h3>
+                <div class="pull-right close-button">
+                    <button><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                </div>
+            </div>
+            <div><textarea>Please edit me!</textarea></div>
+        </div>
+
+        <div class="note panel panel-default">
+            <div class="panel-heading" draggable="true">
+                <h3 class="panel-title" contenteditable="true">Notepad</h3>
+                <div class="pull-right close-button">
+                    <button><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                </div>
+            </div>
+            <div><textarea>Please edit me!</textarea></div>
+        </div>
+    </div>
+
+
+    <script src="js/js.js"></script>
+
+    <!-- Bootstrap core JavaScript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
