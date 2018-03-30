@@ -3,8 +3,8 @@ import { Position } from "./Position.js";
 export class Note {
     constructor(){
         this._id = null;
-        this._title = "";
-        this._content = "";
+        this._title = "Edit me!";
+        this._content = "Edit me!";
         this._position = new Position();
     }
 
