@@ -32,6 +32,10 @@ export class NoteController{
 
     handleDestroy(e){
         e.srcElement.closest('.note').remove();
+        //TODO: removing from persistance
+        //TODO: delete view as well
+        delete this.model;
+        delete this;
     }
 
 
