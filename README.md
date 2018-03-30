@@ -3,6 +3,8 @@ This is a funny little sticky notes app that I've created while learning Vanilla
 
 Try it out here -> https://mateuszo.github.io/Win95-sticky-notes/
 
+:warning: Currently works well only on Chrome 65 
+
 ### Used Technologies
 * vanilla ES6
 * Bootstrap
