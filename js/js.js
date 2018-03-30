@@ -24,7 +24,7 @@ function onDrag(event) {
 }
 
 function destroyNote(event){
-    event.srcElement.closest('.controller').remove();
+    event.srcElement.closest('.note').remove();
 }
 
 function createNote(event) {
