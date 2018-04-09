@@ -1,4 +1,5 @@
 import {storage} from "../Storage/Storage.js";
+import {mouseTracker} from "../Helpers/MouseTracker.js";
 
 export class NoteController{
     constructor(note){
@@ -7,23 +8,25 @@ export class NoteController{
     }
 
     handleContentChange(e){
-        this.note.content = e.srcElement.value;
+        this.note.content = e.target.value;
         storage.save();
     }
 
     handleTitleChange(e){
-        this.note.title = e.srcElement.innerText;
+        this.note.title = e.target.innerText;
         storage.save();
     }
 
     handleDragStart(e){
+        e.dataTransfer.setData('text/plain', 'This window may be dragged')
         this.note.position.setPosition(e.clientX, e.clientY);
     }
 
     handleDragEnd(e){
-        let dX = e.clientX - this.note.position.X;
-        let dY = e.clientY - this.note.position.Y;
-        let noteElement = e.srcElement.parentElement;
+        let dX = mouseTracker.X - this.note.position.X;
+        let dY = mouseTracker.Y - this.note.position.Y;
+
+        let noteElement = e.target.parentElement;
         let X = noteElement.offsetLeft + dX;
         let Y = noteElement.offsetTop + dY;
         noteElement.style.left = X + 'px';
@@ -33,7 +36,7 @@ export class NoteController{
     }
 
     handleDestroy(e){
-        e.srcElement.closest('.note').remove();
+        e.target.closest('.note').remove();
         //TODO: delete view as well?
         storage.remove(this.note);
         delete this.model;
