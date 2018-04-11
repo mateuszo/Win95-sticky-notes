@@ -18,7 +18,7 @@ export class NoteController{
     }
 
     handleDragStart(e){
-        e.dataTransfer.setData('text/plain', 'This window may be dragged')
+        e.dataTransfer.setData('text/plain', '');
         this.note.position.setPosition(e.clientX, e.clientY);
     }
 
@@ -26,11 +26,13 @@ export class NoteController{
         let dX = mouseTracker.X - this.note.position.X;
         let dY = mouseTracker.Y - this.note.position.Y;
 
+        //TODO: make note re-render instead of messing with element properties
         let noteElement = e.target.parentElement;
         let X = noteElement.offsetLeft + dX;
         let Y = noteElement.offsetTop + dY;
-        noteElement.style.left = X + 'px';
-        noteElement.style.top = Y + 'px';
+        this.moveToPosition(noteElement, X, Y);
+        this.moveToTop(noteElement);
+
         this.note.position.setPosition(X, Y);
         storage.save();
     }
@@ -41,6 +43,24 @@ export class NoteController{
         storage.remove(this.note);
         delete this.model;
         delete this;
+    }
+
+    static moveToPosition(noteElement, X, Y){
+        noteElement.style.left = X + 'px';
+        noteElement.style.top = Y + 'px';
+    }
+
+    static moveToTop(noteElement){
+        let notes = document.getElementsByClassName("note");
+        let zIndex = 0;
+        for(let note of notes){
+            if(note.style.zIndex > zIndex){
+                zIndex = note.style.zIndex;
+            }
+        }
+
+        noteElement.style.zIndex = ++zIndex;
+
     }
 
 
