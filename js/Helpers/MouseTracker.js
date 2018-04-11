@@ -8,7 +8,6 @@ class MouseTracker {
     handleMouseMove(e){
         this.X = e.clientX;
         this.Y = e.clientY;
-        console.log(this.X, this.Y);
     }
 }
 

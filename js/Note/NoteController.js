@@ -30,8 +30,8 @@ export class NoteController{
         let noteElement = e.target.parentElement;
         let X = noteElement.offsetLeft + dX;
         let Y = noteElement.offsetTop + dY;
-        this.moveToPosition(noteElement, X, Y);
-        this.moveToTop(noteElement);
+        NoteController.moveToPosition(noteElement, X, Y);
+        NoteController.moveToTop(noteElement);
 
         this.note.position.setPosition(X, Y);
         storage.save();
